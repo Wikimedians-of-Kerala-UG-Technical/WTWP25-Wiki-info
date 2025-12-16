@@ -1,0 +1,152 @@
+/* =====================
+   BASE STYLES
+===================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f7fb;
+  color: #333;
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 20px;
+  font-size: 2.3rem;
+}
+
+/* =====================
+   SEARCH BOX
+===================== */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-box input {
+  width: 260px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-box button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-box button:hover {
+  background: #16a34a;
+}
+
+/* =====================
+   CONTENT SECTION
+===================== */
+section {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* =====================
+   CARD STYLE
+===================== */
+#summary,
+#meta,
+#images,
+#wikidata,
+#history {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================
+   FADE-IN ANIMATION
+===================== */
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   IMAGE GRID
+===================== */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.img-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.img-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* =====================
+   AUTOCOMPLETE DROPDOWN
+===================== */
+.autocomplete {
+  position: relative;
+}
+
+#suggestions {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 10;
+  color:#000;
+}
+
+#suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+#suggestions li:hover {
+  background: #f1f5f9;
+}
+

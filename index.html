@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WikiDash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>WikiDash</h1>
+
+    <div class="search-box">
+      <div class="autocomplete">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search...."
+          oninput="showSuggestions()"
+        >
+        <ul id="suggestions"></ul>
+      </div>
+
+      <button onclick="searchWiki()">Search</button>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <section>
+    <div id="summary" class="fade-in"></div>
+    <div id="meta" class="fade-in"></div>
+    <div id="wikidata" class="fade-in"></div>
+    <div id="history" class="fade-in"></div>
+    <div id="images" class="fade-in"></div>
+  </section>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+</body>
+</html>
+
