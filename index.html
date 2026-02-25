@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WikiDash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300f5ff'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='4' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230b1020'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='56' font-family='Arial, Helvetica, sans-serif' fill='url(%23g)' filter='url(%23glow)'%3EW%3C/text%3E%3C/svg%3E"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<main class="app">
+  <h1 class="title">WikiDash</h1>
+  <div class="search-wrapper">
+    <input id="search" placeholder="Search..." autocomplete="off" />
+
+    <button id="searchBtn">
+      <span class="btn-text">Search</span>
+      <span class="loader"></span>
+    </button>
+    <ul id="suggestions"></ul>
+  </div>
+
+<div id="intro" class="glass-card intro-card">
+  <p class="intro-text">
+    Search any topic to explore <b>summaries, metadata, images</b> and
+    <b>edit history</b> from Wikipedia.
+  </p>
+
+  <div class="trending">
+    <div class="trending-title">TRENDING SEARCHES</div>
+
+    <div class="trending-list">
+      <span onclick="quickSearch('Kerala')">Keralam</span>
+      <span onclick="quickSearch('Artificial Intelligence')">Artificial Intelligence</span>
+      <span onclick="quickSearch('ISRO')">ISRO</span>
+      <span onclick="quickSearch('Python (programming language)')">Python</span>
+      <span onclick="quickSearch('SpaceX')">SpaceX</span>
+    </div>
+  </div>
+</div>
+
+  <div id="summary" class="glass-card"></div>
+  <div id="metadata" class="glass-card"></div>
+  <div id="images" class="glass-card"></div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
+
