@@ -38,14 +38,23 @@ searchInput.addEventListener("input", async () => {
 
 
 searchInput.addEventListener("keydown", e => {
-  if (!suggestions.length) return;
 
-  if (e.key === "ArrowDown") activeIndex = (activeIndex + 1) % suggestions.length;
-  if (e.key === "ArrowUp") activeIndex = (activeIndex - 1 + suggestions.length) % suggestions.length;
+  if (e.key === "ArrowDown" && suggestions.length) {
+    activeIndex = (activeIndex + 1) % suggestions.length;
+  }
+
+  if (e.key === "ArrowUp" && suggestions.length) {
+    activeIndex = (activeIndex - 1 + suggestions.length) % suggestions.length;
+  }
 
   if (e.key === "Enter") {
     e.preventDefault();
-    selectSuggestion(activeIndex);
+
+    if (suggestions.length && activeIndex >= 0) {
+      selectSuggestion(activeIndex);
+    } else if (searchInput.value.trim()) {
+      loadPage(searchInput.value.trim());
+    }
   }
 
   [...suggestionsBox.children].forEach((li,i) =>
