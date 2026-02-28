@@ -36,30 +36,30 @@ searchInput.addEventListener("input", async () => {
   if (suggestions.length) suggestionsBox.classList.add("show");
 });
 
-
 searchInput.addEventListener("keydown", e => {
+  if (suggestions.length) {
+    if (e.key === "ArrowDown") {
+      activeIndex = (activeIndex + 1) % suggestions.length;
+    }
 
-  if (e.key === "ArrowDown" && suggestions.length) {
-    activeIndex = (activeIndex + 1) % suggestions.length;
+    if (e.key === "ArrowUp") {
+      activeIndex = (activeIndex - 1 + suggestions.length) % suggestions.length;
+    }
+
+    [...suggestionsBox.children].forEach((li, i) =>
+      li.classList.toggle("active", i === activeIndex)
+    );
   }
-
-  if (e.key === "ArrowUp" && suggestions.length) {
-    activeIndex = (activeIndex - 1 + suggestions.length) % suggestions.length;
-  }
-
   if (e.key === "Enter") {
     e.preventDefault();
 
     if (suggestions.length && activeIndex >= 0) {
       selectSuggestion(activeIndex);
-    } else if (searchInput.value.trim()) {
+    } 
+    else if (searchInput.value.trim()) {
       loadPage(searchInput.value.trim());
     }
   }
-
-  [...suggestionsBox.children].forEach((li,i) =>
-    li.classList.toggle("active", i === activeIndex)
-  );
 });
 
 function selectSuggestion(i) {
